@@ -1,0 +1,13 @@
+
+import axios from "axios";
+
+const axiosInstance = axios.create({
+  baseURL:"http://192.168.84.125:3001",
+  timeout: 10000,
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+});
+console.log("Axios Base URL:", axiosInstance.defaults.baseURL);
+export default axiosInstance;
