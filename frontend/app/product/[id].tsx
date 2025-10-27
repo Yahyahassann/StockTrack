@@ -201,7 +201,7 @@ export default function ProductDetailScreen() {
 
       if (!result.canceled && result.assets) {
         const imageFiles = result.assets.map((asset, index) => ({
-          uri: asset.uri,
+          uri: asset.uri,//local file path
           name: `product-${Date.now()}-${index}.jpg`,
           type: 'image/jpeg',
         }));
@@ -270,8 +270,8 @@ export default function ProductDetailScreen() {
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+      behavior={'height'}
+      keyboardVerticalOffset={20}
     >
       {/* Header */}
       <View style={styles.header}>
@@ -650,6 +650,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    marginTop: 25,
   },
   header: {
     flexDirection: 'row',
@@ -666,6 +667,7 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   headerTitle: {
+
     fontSize: 18,
     fontWeight: '600',
     color: '#000',

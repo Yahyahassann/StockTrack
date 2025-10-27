@@ -12,9 +12,7 @@ export default function Home() {
 
   const stats = {
     total: products.length,
-    lowStock: products.filter((p: any) => p.quantity < 10).length,
     categories: [...new Set(products.map((p: any) => p.category))].length,
-    totalValue: products.reduce((sum: number, p: any) => sum + (p.price * p.quantity), 0),
   };
 
   const quickActions = [
@@ -35,7 +33,6 @@ export default function Home() {
         <View style={styles.headerContent}>
           <Ionicons name="cube" size={60} color="#fff" />
           <Text style={styles.title}>StockTrack</Text>
-          <Text style={styles.subtitle}>Inventory Management System</Text>
         </View>
       </LinearGradient>
 
